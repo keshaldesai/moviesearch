@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Stat from './Stat';
 
 class Movie extends Component {
 	render() {
 		if (!this.props.movies) {
-			return <div>Loading...</div>;
+			return <div className="loader">Loading...</div>;
 		}
 		const { movies } = this.props;
 		const posterUrl = `https://image.tmdb.org/t/p/w640${movies.poster_path}`
@@ -11,10 +12,14 @@ class Movie extends Component {
 			<div className="shell">
 				<div className="poster"><img src={posterUrl} alt="Movie Poster" /></div>
 				<div className="info">
-					<div className="title"><h1>{movies.original_title}</h1></div>
-					<div className="tagline"><h2>{movies.tagline}</h2></div>
+					<div className="title">{movies.original_title}</div>
+					<div className="tagline">{movies.tagline}</div>
 					<div className="overview">{movies.overview}</div>
 					<div className="stats">
+						<Stat title="Original Release:" stat={movies.release_date} />
+						<Stat title="Running Time:" stat={movies.runtime} />
+						<Stat title="Box Office:" stat={movies.revenue} />
+						<Stat title="Vote Average:" stat={movies.vote_average + ' / 10'} />
 					</div>
 				</div>
 			</div>
