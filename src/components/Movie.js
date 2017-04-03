@@ -7,7 +7,13 @@ class Movie extends Component {
 			return <div className="loader">Loading...</div>;
 		}
 		const { movies } = this.props;
-		const posterUrl = `https://image.tmdb.org/t/p/w640${movies.poster_path}`
+		const posterUrl = `https://image.tmdb.org/t/p/w640${movies.poster_path}`;
+		var formatter = new Intl.NumberFormat('en-US', {
+			style: 'currency',
+			currency: 'USD',
+			minimumFractionDigits: 0,
+		});
+		const boxOffice = formatter.format(movies.revenue);
 		return (
 			<div className="shell">
 				<div className="poster"><img src={posterUrl} alt="Movie Poster" /></div>
@@ -18,7 +24,7 @@ class Movie extends Component {
 					<div className="stats">
 						<Stat title="Original Release:" stat={movies.release_date} />
 						<Stat title="Running Time:" stat={movies.runtime} />
-						<Stat title="Box Office:" stat={movies.revenue} />
+						<Stat title="Box Office:" stat={boxOffice} />
 						<Stat title="Vote Average:" stat={movies.vote_average + ' / 10'} />
 					</div>
 				</div>
