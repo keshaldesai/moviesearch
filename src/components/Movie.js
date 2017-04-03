@@ -13,7 +13,7 @@ class Movie extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="movie-box">
 				{this.puke()}
 			</div>
 		);
