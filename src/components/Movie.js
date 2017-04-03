@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchMovie } from '../actions/index';
 
 class Movie extends Component {
-	componentWillMount() {
-		this.props.fetchMovie();
-	}
-
-	puke() {
-		return <div>{JSON.stringify(this.props.movies)}</div>
-	}
-
 	render() {
+		if (!this.props.movies) {
+			return <div>Loading...</div>;
+		}
+		const { movies } = this.props;
+		const posterUrl = `https://image.tmdb.org/t/p/w640${movies.poster_path}`
 		return (
-			<div className="movie-box">
-				{this.puke()}
+			<div className="shell">
+				<div className="poster"><img src={posterUrl} alt="Movie Poster" /></div>
+				<div className="info">
+					<div className="title"><h1>{movies.original_title}</h1></div>
+					<div className="tagline"><h2>{movies.tagline}</h2></div>
+					<div className="overview">{movies.overview}</div>
+					<div className="stats">
+					</div>
+				</div>
 			</div>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		movies: state.movies.movie
-	}
-}
 
-export default connect(mapStateToProps, { fetchMovie })(Movie);
+
+export default Movie;
