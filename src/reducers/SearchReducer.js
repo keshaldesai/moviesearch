@@ -1,4 +1,4 @@
-import { MOVIE_SEARCH, MOVIE_QUERY } from '../actions/index';
+import { MOVIE_SEARCH, MOVIE_QUERY, CLEAR_ALL } from '../actions/index';
 
 const INITIAL_STATE = { value: '', searchList: [] };
 
@@ -9,9 +9,12 @@ export default function (state = INITIAL_STATE, action) {
                 ...state, value: action.payload
             };
         case MOVIE_QUERY:
-            console.log(action.payload.data);
             return {
                 ...state, searchList: action.payload.data.results
+            };
+        case CLEAR_ALL:
+            return {
+                ...state, ...INITIAL_STATE
             };
         default:
             return state;

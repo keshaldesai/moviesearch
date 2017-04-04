@@ -18,7 +18,7 @@ class Movie extends Component {
 			<div className="shell">
 				<div className="poster"><img src={posterUrl} alt="Movie Poster" /></div>
 				<div className="info">
-					<div className="title">{movies.original_title}</div>
+					<div className="title">{movies.title}</div>
 					<div className="tagline">{movies.tagline}</div>
 					<div className="overview">{movies.overview}</div>
 					<div className="stats">
