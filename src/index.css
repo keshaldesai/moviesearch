@@ -4,6 +4,7 @@ body {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	background-color: black;
+	color: white;
 }
 
 * {
@@ -33,11 +34,10 @@ body {
 
 .header {
 	width: 90%;
-	align-self: flex-start;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin: 15px 30px 15px 30px;
 }
 
@@ -50,7 +50,7 @@ body {
 	align-self: flex-end;
 	width: 50%;
 	min-width: 400px;
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.75);
 	border: solid 2px darkslategray;
 	border-radius: 3px;
 	transition: border 0.3s;
@@ -94,7 +94,6 @@ input {
 
 .shell {
 	background-color: rgba(0,0,0,0.75);;
-	color: white;
 	display: flex;
 	flex-flow: row wrap-reverse;
 	justify-content: center;
@@ -162,11 +161,8 @@ input {
 
 .footer {
 	width: 100%;
-	align-self: flex-end;
 	text-align: center;
-	color: white;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 0px 0px 20px;
 }
 
 /* Extras */
