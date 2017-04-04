@@ -14,13 +14,9 @@ export function fetchMovie() {
 }
 
 export function movieSearch(val) {
-	console.log('ACTION CREATED: movieSearch()');
-	var test = {
-		val
-	};
 	return {
 		type: MOVIE_SEARCH,
-		payload: test
+		payload: val
 	};
 }
 
