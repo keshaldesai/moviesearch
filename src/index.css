@@ -32,47 +32,41 @@ body {
 /* Header */
 
 .header {
-	width: 100%;
+	width: 90%;
 	align-self: flex-start;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-flow: row wrap;
 	align-items: center;
-	flex-wrap: wrap;
-	position: relative;
-	margin-top: 15px;
+	justify-content: space-around;
+	margin: 15px 30px 15px 30px;
 }
 
 .logo {
 	align-self: flex-start;
 	max-height: 70px;
-	margin-bottom: 15px;
 }
 
 .search-box {
 	align-self: flex-end;
-	background: rgba(0, 0, 0, 0.6);
-	border: none;
-	border-bottom: solid 2px black;
+	width: 50%;
+	min-width: 400px;
+	background: rgba(0, 0, 0, 0.7);
+	border: solid 2px darkslategray;
 	border-radius: 3px;
 	transition: border 0.3s;
-	margin-bottom: 20px;
 	font-size: 13px;
 	color: lightgrey;
-	padding-left: 10px;
-	padding-top: 7px;
-	opacity: .7;
-	margin-right: 10px;
-	margin-left: 10px;
+	padding: 7px 0px 0px 10px;
+	margin-bottom: 15px;
 }
 
 .search-input {
 	background: transparent;
 	border: none;
 	font-size: 20px;
-	margin-left: 10px;
-	padding-bottom: 5px;
+	padding: 0px 0px 5px 13px;
 }
+
 input {
 	color: lightgray;
 }
@@ -99,22 +93,21 @@ input {
 /* Shell */
 
 .shell {
-	background-color: black;
+	background-color: rgba(0,0,0,0.75);;
 	color: white;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap-reverse;
+	flex-flow: row wrap-reverse;
 	justify-content: center;
-	border-radius: 4px;
-	margin-left: 30px;
-	margin-right: 30px;
+	border-radius: 3px;
+	margin-left: 40px;
+	margin-right: 40px;
 }
 
 .shell img {
 	min-width: 350px;
-	width: calc(100%);
-  	margin-left: calc(-20px);
-  	margin-right: calc(-20px);
+	width: 100%;
+	vertical-align: top;
+	border-radius: 3px;
 }
 
 .poster {
@@ -130,18 +123,18 @@ input {
 }
 
 .title {
-	font-size: 45px;
+	font-size: 43px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 .tagline {
-	font-size: 30px;
+	font-size: 27px;
 	color: #00FC87;
 	margin-bottom: 20px;
 }
 
 .overview {
-	font-size: 24px;
+	font-size: 21px;
 	margin-bottom: 20px
 }
 
