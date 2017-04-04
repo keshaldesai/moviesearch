@@ -5,8 +5,8 @@ export const MOVIE_SEARCH = 'MOVIE_SEARCH';
 
 const API_KEY = 'f7a6b4be5b81c46de9945d56e3165355';
 
-export function fetchMovie() {
-	const request = axios.get(`https://api.themoviedb.org/3/movie/198184?api_key=${API_KEY}`);
+export function fetchMovie(movie) {
+	const request = axios.get(`https://api.themoviedb.org/3/movie/${movie}?api_key=${API_KEY}`);
 	return {
 		type: FETCH_MOVIE,
 		payload: request
