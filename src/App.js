@@ -9,8 +9,7 @@ import { fetchMovie } from './actions/index';
 
 class App extends Component {
 	componentWillMount() {
-		this.props.fetchMovie('198184')
-			.then(this.props.fetchMovie('550'));
+		this.props.fetchMovie('198184');
 	}
 	render() {
 

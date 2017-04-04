@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { movieSearch, fetchMovie } from '../actions/index';
+import { movieSearch, movieQuery } from '../actions/index';
 import { connect } from 'react-redux';
 
 class Header extends Component {
 	handleChange(e) {
-		this.props.dispatch(movieSearch(e.target.value));
+		this.props.dispatch(movieSearch(e.target.value))
 	}
 	handleKeyPress(e) {
 		if (e.key === 'Enter') {
-			this.props.dispatch(fetchMovie(this.props.term));
+			this.props.dispatch(movieQuery(this.props.term));
 		}
 	}
 	render() {
