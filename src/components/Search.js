@@ -3,8 +3,10 @@ import { movieSearch, movieQuery, clear, fetchMovie } from '../actions/index';
 import { connect } from 'react-redux';
 import Autosuggest from 'react-autosuggest';
 
+//all that is left to do, fix key down/up
+
 function getSuggestionValue(suggestion) {
-	return suggestion.id;
+	return suggestion.title;
 }
 
 function renderSuggestion(suggestion) {
@@ -33,8 +35,8 @@ class Search extends Component {
 	onChange = (event, { newValue }) => {
 		this.props.dispatch(movieSearch(newValue))
 	};
-	onSuggestionSelected(event, { suggestionValue }) {
-		this.props.dispatch(fetchMovie(suggestionValue));
+	onSuggestionSelected(event, { suggestion }) {
+		this.props.dispatch(fetchMovie(suggestion.id));
 	}
 	render() {
 		const inputProps = {
